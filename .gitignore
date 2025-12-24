@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.env
+*.log
+
+# Node / Frontend
+node_modules/
+dist/
+.env.local
+.env.development
+.env.production
+
+# FAISS / storage
+backend/storage/faiss_index/
+backend/storage/uploads/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
