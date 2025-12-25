@@ -1,23 +1,26 @@
 import FileUpload from "./components/FileUpload";
 import ChatBox from "./components/ChatBox";
+import AnswerBox from "./components/AnswerBox";
 import { useState } from "react";
 
 export default function App() {
   const [uploadedImage, setUploadedImage] = useState(null);
   const [uploadedPDF, setUploadedPDF] = useState(null);
-  const [answer, setAnswer] = useState("");
+
+  // ✅ Answer is OBJECT, not string
+  const [answer, setAnswer] = useState(null);
 
   return (
     <div style={styles.main}>
       {/* LEFT SIDE */}
       <div style={styles.left}>
-        <FileUpload 
-          setUploadedImage={setUploadedImage} 
+        <FileUpload
+          setUploadedImage={setUploadedImage}
           setUploadedPDF={setUploadedPDF}
         />
 
-        <ChatBox 
-          uploadedImage={uploadedImage} 
+        <ChatBox
+          uploadedImage={uploadedImage}
           uploadedPDF={uploadedPDF}
           setAnswer={setAnswer}
         />
@@ -26,7 +29,13 @@ export default function App() {
       {/* RIGHT SIDE */}
       <div style={styles.right}>
         <h2 style={styles.answerTitle}>🤖 AI Response</h2>
-        <div style={styles.answerBox}>{answer || "Ask something..."}</div>
+
+        <div style={styles.answerBox}>
+          {!answer && "Ask something..."}
+
+          {/* ✅ Structured rendering */}
+          <AnswerBox answer={answer} />
+        </div>
       </div>
     </div>
   );

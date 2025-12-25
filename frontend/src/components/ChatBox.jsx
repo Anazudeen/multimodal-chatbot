@@ -12,9 +12,17 @@ export default function ChatBox({ uploadedImage, setAnswer }) {
 
     try {
       const res = await askLLM(query, uploadedImage);
-      setAnswer(res.data.answer);
+
+      // ✅ Store FULL structured response
+      setAnswer(res.data);
     } catch (err) {
-      setAnswer("⚠️ Error: Could not reach the model.");
+      setAnswer({
+        answer: "⚠️ Error: Could not reach the model.",
+        summary: null,
+        key_points: [],
+        used_context: { pdf: false, image: false, text_only: true },
+        confidence: "low",
+      });
     }
 
     setLoading(false);

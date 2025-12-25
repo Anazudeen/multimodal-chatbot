@@ -20,3 +20,6 @@ backend/storage/uploads/
 .idea/
 .DS_Store
 Thumbs.db
+
+# mldb
+mlflow.db
