@@ -11,6 +11,26 @@
 - 🔗 **OpenRouter LLM Integration**: Uses free LLMs for text & multimodal reasoning.
 
 ---
+##  Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/pdf-question-answering.png" width="250"/><br/>
+      <b>PDF Q&A</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/image-understanding.png" width="250"/><br/>
+      <b>Image Analysis</b>
+    </td>
+    <td align="center">
+      <img src="screenshots/text-question-answering.png" width="250"/><br/>
+      <b>Text Query</b>
+    </td>
+  </tr>
+</table>
+
+---
 
 ## Tech Stack
 
